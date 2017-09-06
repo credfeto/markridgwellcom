@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /avatar.jpg
+Disallow: /SaveRating/

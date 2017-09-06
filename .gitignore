@@ -1,0 +1,5 @@
+dst/static
+tmp
+.sass-cache
+node_modules
+.idea

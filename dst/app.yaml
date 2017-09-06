@@ -1,0 +1,59 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+default_expiration: "30d"
+
+handlers:
+- url: /
+  static_files: static/index.html
+  upload: static/index.html
+  secure: always
+  redirect_http_response_code: 301
+  http_headers:
+    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self'"
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    strict-transport-security: max-age=31536000; includeSubdomains; preload
+    Referrer-Policy: strict-origin
+    
+- url: /
+  static_files: static/robots.txt
+  upload: static/robots.txt
+  secure: always
+  redirect_http_response_code: 301
+  http_headers:
+    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self'"
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    strict-transport-security: max-age=31536000; includeSubdomains; preload
+    Referrer-Policy: strict-origin
+
+- url: /
+  static_files: static/humans.txt
+  upload: static/humans.txt
+  secure: always
+  redirect_http_response_code: 301
+  http_headers:
+    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self'"
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    strict-transport-security: max-age=31536000; includeSubdomains; preload
+    Referrer-Policy: strict-origin
+
+    
+- url: /content/(.*)
+  static_files: static/content/\1
+  upload: static/content/(.*)
+  secure: always
+  redirect_http_response_code: 301
+  http_headers:
+    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self'"
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block
+    X-Content-Type-Options: nosniff
+    strict-transport-security: max-age=31536000; includeSubdomains; preload
+    Referrer-Policy: strict-origin
