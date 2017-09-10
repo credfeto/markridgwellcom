@@ -16,7 +16,7 @@ handlers:
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
-    Referrer-Policy: origin
+    Referrer-Policy: no-referrer
     
 - url: /robots.txt
   static_files: static/robots.txt
@@ -29,7 +29,7 @@ handlers:
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
-    Referrer-Policy: origin
+    Referrer-Policy: no-referrer
 
 - url: /humans.txt
   static_files: static/humans.txt
@@ -42,7 +42,7 @@ handlers:
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
-    Referrer-Policy: origin
+    Referrer-Policy: no-referrer
 
     
 - url: /img
@@ -56,7 +56,7 @@ handlers:
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
-    Referrer-Policy: origin
+    Referrer-Policy: no-referrer
 
 - url: /css
   static_dir: static/css
@@ -69,4 +69,4 @@ handlers:
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
-    Referrer-Policy: origin
+    Referrer-Policy: no-referrer
