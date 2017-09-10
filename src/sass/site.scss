@@ -45,6 +45,7 @@ header
 	font-weight: 400;
 	color: #fff;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	margin-bottom: 0px;
 }
 .container > header h1 span{
 
@@ -62,6 +63,7 @@ ul.contact {
 	zoom: 0.29;
 	margin-left: 0px;
 	padding-left: 0px;
+	list-style-type: none;
 
 	li {
 		margin-right: 5px;
@@ -69,7 +71,7 @@ ul.contact {
 
 		a {
 			display: inline-block;
-			background: url('../img/contact.png') no-repeat;
+			background: transparent url('../img/contact.png') no-repeat;
 			overflow: hidden;
 			text-indent: -9999px;
 			text-align: left;
