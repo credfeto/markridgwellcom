@@ -41,9 +41,6 @@ module.exports = function (grunt) {
     }
 
     function getNamedFile(srcdir, wildcard, prefix) {
-        var path = require('path');
-        var files = {};
-
         cssFile = '';
 
         grunt.file.expand({cwd: srcdir}, wildcard).forEach(function(relpath) {
@@ -155,87 +152,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        watch: { // Compile everything into one task with Watch Plugin
-            sass: {
-                files: 'src/**/*.scss',
-                tasks: ['clean', 'pug', 'sass', 'postcss', 'cssmin', 'filerev'],
-                options: {
-                    atBegin: true
-                }
-            },
 
-            postcss: {
-                files: 'tmp/css/postsass/*.css',
-                tasks: ['postcss'],
-                options: {
-                    atBegin: true
-                }
-            },
-
-            cssmin: {
-                files: 'tmp/css/auto/*.css',
-                tasks: ['cssmin'],
-                options: {
-                    atBegin: true
-                }
-            },
-
-            cssfilerev: {
-                files: 'tmp/css/min/*.css',
-                tasks: ['filerev'],
-                options: {
-                    atBegin: true
-                }
-            },
-
-            js: {
-                files: 'src/**/*.js',
-                tasks: ['uglify'],
-                options: {
-                    atBegin: true
-                }
-            },
-
-            pug: {
-                files: 'src/**/*.pug',
-                tasks: ['pug', 'htmlmin'],
-                options: {
-                    atBegin: true
-                }
-            },
-
-            html: {
-                files: 'src/html/**/*.html',
-                tasks: ['htmlmin'],
-                options: {
-                    atBegin: true
-                }
-            },
-
-          bandimages: {
-            files: 'src/**/*.jpg',
-            tasks: [ 'filerev', 'pug'],
-              options: {
-                  atBegin: true
-              }
-            },
-
-            favicon: {
-                files: 'src/**/*.ico',
-                tasks: [ 'filerev' ],
-                options: {
-                    atBegin: true
-                }
-            },
-
-            png: {
-                files: 'src/**/*.png',
-                tasks: [ 'copy' ],
-                options: {
-                    atBegin: true
-                }
-            }
-        },
 
         filerev: {
             options: {
@@ -259,6 +176,16 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'src/txt/', src: ['**/*.txt'], dest: 'dst/static/'}
                 ]
             }
+    },
+
+        watch: { // Compile everything into one task with Watch Plugin
+            all: {
+                files: 'src/**/*.*',
+                tasks: ['rebuild'],
+                options: {
+                    atBegin: true
+                }
+            }
         }
     });
 
@@ -274,6 +201,17 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-filerev');
     grunt.loadNpmTasks('grunt-contrib-pug');
 
+
     // Register Grunt tasks
-    grunt.registerTask('default', ['clean', 'filerev', 'watch']);
+    grunt.registerTask('default', ['watch']);
+
+    grunt.registerTask('rebuild', [
+        'clean',
+        'sass',
+        'postcss',
+        'cssmin',
+        'htmlmin',
+        'copy',
+        'filerev',
+        'pug']);
 };

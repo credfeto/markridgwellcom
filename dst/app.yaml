@@ -17,7 +17,7 @@ handlers:
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
-    
+
 - url: /robots.txt
   static_files: static/robots.txt
   upload: static/robots.txt
@@ -44,7 +44,7 @@ handlers:
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
 
-    
+
 - url: /img
   static_dir: static/img
   secure: always
