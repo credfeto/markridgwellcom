@@ -157,7 +157,7 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'tmp/css/datauri',
+                    cwd: 'tmp/css/datauri/',
                     src: ['*.css', '!*.min.css'],
                     dest: 'tmp/css/min',
                     ext: '.css'
@@ -219,15 +219,16 @@ module.exports = function (grunt) {
                 dest: 'dst/static/css'
             }
         },
-    copy: {
-        main: {
-            files: [
+
+        copy: {
+            main: {
+                files: [
                     {expand: true, cwd: 'src/img/', src: ['**/*.png'], dest: 'dst/static/img'},
 
                     {expand: true, cwd: 'src/txt/', src: ['**/*.txt'], dest: 'dst/static/'}
                 ]
             }
-    },
+        },
 
         watch: { // Compile everything into one task with Watch Plugin
             all: {
@@ -262,8 +263,9 @@ module.exports = function (grunt) {
         'postcss',
         'dataUri',
         'cssmin',
-        'htmlmin',
         'copy',
         'filerev',
-        'pug']);
+        'pug',
+        'htmlmin'
+    ]);
 };

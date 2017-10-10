@@ -11,7 +11,7 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
@@ -24,7 +24,7 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
@@ -37,7 +37,7 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
@@ -51,7 +51,7 @@ handlers:
   redirect_http_response_code: 301
   expiration: "600d"
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
@@ -64,7 +64,7 @@ handlers:
   redirect_http_response_code: 301
   expiration: "600d"
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
     X-Content-Type-Options: nosniff
