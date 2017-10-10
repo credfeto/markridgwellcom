@@ -107,6 +107,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
         postcss: { // Begin Post CSS Plugin
             options: {
                 map: false,
@@ -121,6 +122,32 @@ module.exports = function (grunt) {
                 dest: 'tmp/css/auto/site.css'
             }
         },
+
+        dataUri: {
+            dist: {
+                // src file
+                src: ['tmp/css/auto/*.css'],
+                // output dir
+                dest: 'tmp/css/datauri/',
+                options: {
+                    baseDir: 'src/css',
+
+                    // specified files are only encoding
+                    target: ['src/img/*.*'],
+                    // adjust relative path?
+                    fixDirLevel: true,
+                    // img detecting base dir
+                    //baseDir: '../img/',
+
+                    // Do not inline any images larger
+                    // than this size. 2048 is a size
+                    // recommended by Google's mod_pagespeed.
+                    maxBytes: 2048
+
+                }
+            }
+        },
+
         cssmin: { // Begin CSS Minify Plugin
             options: {
                 mergeIntoShorthands: true,
@@ -130,19 +157,22 @@ module.exports = function (grunt) {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'tmp/css/auto',
+                    cwd: 'tmp/css/datauri',
                     src: ['*.css', '!*.min.css'],
                     dest: 'tmp/css/min',
                     ext: '.css'
                 }]
             }
         },
+
+
         uglify: { // Begin JS Uglify Plugin
             build: {
                 src: ['src/*.js'],
                 dest: 'dst/static/js/script.min.js'
             }
         },
+
         pug: {
             compile: {
                 options: {
@@ -159,6 +189,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         htmlmin: {                                     // Task
             dist: {                                      // Target
                 options: {                                 // Target options
@@ -173,7 +204,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
 
         filerev: {
             options: {
@@ -221,7 +251,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-filerev');
     grunt.loadNpmTasks('grunt-contrib-pug');
-
+    grunt.loadNpmTasks('grunt-data-uri');
 
     // Register Grunt tasks
     grunt.registerTask('default', ['watch']);
@@ -230,6 +260,7 @@ module.exports = function (grunt) {
         'clean',
         'sass',
         'postcss',
+        'dataUri',
         'cssmin',
         'htmlmin',
         'copy',
