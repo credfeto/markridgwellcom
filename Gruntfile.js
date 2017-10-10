@@ -1,21 +1,24 @@
 // Load Grunt
 module.exports = function (grunt) {
+
+    var maxInlineCssLength = 8192;
+
     // Build a multi task "files" object dynamically.
     function getBandImageFiles(srcdir, wildcard, sassfilename) {
         var path = require('path');
         var files = {};
 
 
-        index = 0;
+        var index = 0;
         grunt.file.expand({cwd: srcdir}, wildcard).forEach(function(relpath) {
 
-            pos = relpath.indexOf('.');
-            displayName = relpath.substr(0, pos);
+            var pos = relpath.indexOf('.');
+            var displayName = relpath.substr(0, pos);
             displayName = displayName.replace(/^\d+\s/, '').replace(/\s\d+$/, '');
 
             files[index] = {
                 source: path.join(srcdir, relpath),
-                relpath: relpath,
+                relPath: relpath,
                 displayName: displayName
             };
 
@@ -26,11 +29,7 @@ module.exports = function (grunt) {
 
         var sassContent = '$imagelist: (\r\n';
         for( var i =0; i < index; ++i) {
-
-            //console.log(prefix);
-            var filename = '../img/' + files[i].relpath;
-            console.log(filename);
-
+            var filename = '../img/' + files[i].relPath;
             sassContent += '  (' + (+i+1) +', "' + filename + '"),\r\n';
         }
         sassContent += ')\r\n';
@@ -41,17 +40,38 @@ module.exports = function (grunt) {
     }
 
     function getNamedFile(srcdir, wildcard, prefix) {
-        cssFile = '';
+        var fileName = null;
 
         grunt.file.expand({cwd: srcdir}, wildcard).forEach(function(relpath) {
 
-            cssFile = prefix + '/' + relpath;
-            return cssFile;
+            fileName = prefix + '/' + relpath;
+            return fileName;
 
         });
 
 
-        return cssFile;
+        return fileName;
+    }
+
+    function getInlineNamedFile(srcdir, wildcard, relativePath) {
+        var fileName = getNamedFile(srcdir, wildcard, srcdir);
+        if (fileName === null) {
+            return null;
+        }
+
+        if (grunt.file.exists(fileName)) {
+            var content = grunt.file.read(fileName);
+
+            content = content.replace(/\.\.\//g, relativePath);
+
+            if (content.length < maxInlineCssLength) {
+                console.log('total Length: ' + content.length);
+                console.log('Using inline content from ' + fileName + ' as it is less than ' + maxInlineCssLength + ' bytes');
+                return content;
+            }
+        }
+
+        return null;
     }
 
     grunt.initConfig({
@@ -130,6 +150,7 @@ module.exports = function (grunt) {
                         debug: false,
                         favicon: getNamedFile('dst/static/img', '*favicon.*.ico', 'img'),
                         css: getNamedFile('dst/static/css', '*site.*.css', 'css'),
+                        inlinecss: getInlineNamedFile('dst/static/css', '*site.*.css', ''),
                         images: getBandImageFiles( 'dst/static/img', '**/*.jpg', 'src/sass/imagefiles.generated.scss')
                     }
                 },

@@ -12,7 +12,11 @@ html(lang='en')
 		meta(name='twitter:creator' content='@credfeto')
 		link(rel='shortcut icon' href= favicon)
 		link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Fresca')
-		link(rel='stylesheet' type='text/css' href= css)
+		if inlinecss
+			style
+				!= inlinecss
+		else
+			link(rel='stylesheet' type='text/css' href= css)
 		
 	body
 		ul(class='cb-slideshow')
