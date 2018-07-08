@@ -11,6 +11,7 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   http_headers:
+    Content-Type: text/html; charset=UTF-8
     Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
