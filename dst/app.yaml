@@ -12,9 +12,10 @@ handlers:
   redirect_http_response_code: 301
   http_headers:
     Content-Type: text/html; charset=UTF-8
-    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; report-uri https://markridgwell.report-uri.com/r/d/csp/enforce"
+    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
     X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block
+    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
@@ -25,9 +26,10 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; report-uri: https://markridgwell.report-uri.com/r/d/csp/enforce"
+    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
     X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block
+    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
@@ -38,9 +40,10 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; report-uri https://markridgwell.report-uri.com/r/d/csp/enforce"
+    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
     X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block
+    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
@@ -52,9 +55,10 @@ handlers:
   redirect_http_response_code: 301
   expiration: "600d"
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none';  report-uri https://markridgwell.report-uri.com/r/d/csp/enforce"
+    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
     X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block
+    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
@@ -65,9 +69,10 @@ handlers:
   redirect_http_response_code: 301
   expiration: "600d"
   http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com"
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; report-uri https://markridgwell.report-uri.com/r/d/csp/enforce"
+    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
     X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block
+    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
