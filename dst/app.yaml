@@ -19,6 +19,7 @@ handlers:
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
+    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 - url: /robots.txt
   static_files: static/robots.txt
@@ -33,6 +34,7 @@ handlers:
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
+    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 - url: /humans.txt
   static_files: static/humans.txt
@@ -47,6 +49,7 @@ handlers:
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
+    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 
 - url: /img
@@ -62,6 +65,7 @@ handlers:
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
+    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 - url: /css
   static_dir: static/css
@@ -76,3 +80,4 @@ handlers:
     X-Content-Type-Options: nosniff
     strict-transport-security: max-age=31536000; includeSubdomains; preload
     Referrer-Policy: no-referrer
+    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
