@@ -1,6 +1,8 @@
 // Load Grunt
 module.exports = function (grunt) {
 
+    const sass = require('node-sass');
+
     var maxInlineCssLength = 8192;
 
     // Build a multi task "files" object dynamically.
@@ -96,6 +98,7 @@ module.exports = function (grunt) {
         sass: { // Begin Sass Plugin
             dist: {
                 options: {
+                    implementation: sass,
                     sourcemap: 'none'
                 },
                 files: [{
@@ -244,7 +247,7 @@ module.exports = function (grunt) {
     // Load Grunt plugins
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
