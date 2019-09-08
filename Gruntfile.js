@@ -14,6 +14,7 @@ module.exports = function (grunt) {
         var index = 0;
         grunt.file.expand({cwd: srcdir}, wildcard).forEach(function(relpath) {
 
+            console.log(relpath)
             var pos = relpath.indexOf('.');
             var displayName = relpath.substr(0, pos);
             displayName = displayName.replace(/^\d+\s/, '').replace(/\s\d+$/, '');
@@ -264,6 +265,16 @@ module.exports = function (grunt) {
         'clean',
         'sass',
         'postcss',
+        'sass',
+        'dataUri',
+        'cssmin',
+        'copy',
+        'filerev',
+        'pug',
+        'htmlmin',
+        'sass',
+        'postcss',
+        'sass',
         'dataUri',
         'cssmin',
         'copy',
