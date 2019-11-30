@@ -1,4 +1,4 @@
-name: Node CI
+name: Build and deploy
 
 on: [push]
 
@@ -23,3 +23,10 @@ jobs:
         npm run build
       env:
         CI: true
+    - uses: actions-hub/gcloud@master
+      name: Deploy
+      env:
+        PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
+        APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+      with:
+        args: app deploy dst/app.yaml
