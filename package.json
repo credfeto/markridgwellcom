@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Mark Ridgwell.com",
   "license": "MarkR",
+  "scripts": {
+	 "build": "grunt",
+  },
   "devDependencies": {
     "autoprefixer": "latest",
     "grunt": "latest",
