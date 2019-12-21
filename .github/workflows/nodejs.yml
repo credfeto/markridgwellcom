@@ -24,7 +24,8 @@ jobs:
     - name: npm build
       run: |
             npm run build
-            ls -lR
+            pwd
+            ls -lRd
       env:
         CI: false
     - uses: actions-hub/gcloud@master
