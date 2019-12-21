@@ -5,6 +5,22 @@ threadsafe: true
 default_expiration: "30d"
 
 handlers:
+- url: /(.*\.(ico|gif|png|jpg))$
+  static_files: static/\1
+  upload: static/(.*)
+  secure: always
+  redirect_http_response_code: 301
+  expiration: "600d"
+  http_headers:
+    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; report-uri https://markridgwell.report-uri.com/r/d/csp/enforce"
+    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
+    X-Content-Type-Options: nosniff
+    strict-transport-security: max-age=31536000; includeSubdomains; preload
+    Referrer-Policy: no-referrer
+    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
+
 - url: /
   static_files: static/index.html
   upload: static/index.html
@@ -51,18 +67,3 @@ handlers:
     Referrer-Policy: no-referrer
     Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
-- url: /(.+)
-  static_files: static/\1
-  upload: static/(.*)
-  secure: always
-  redirect_http_response_code: 301
-  expiration: "600d"
-  http_headers:
-    Content-Security-Policy: "default-src 'none'; img-src 'self' data:; report-uri https://markridgwell.report-uri.com/r/d/csp/enforce"
-    Expect-CT: max-age=0, report-uri="https://markridgwell.report-uri.com/r/d/ct/reportOnly"
-    X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block; report=https://markridgwell.report-uri.com/r/d/xss/enforce
-    X-Content-Type-Options: nosniff
-    strict-transport-security: max-age=31536000; includeSubdomains; preload
-    Referrer-Policy: no-referrer
-    Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
