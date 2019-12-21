@@ -30,14 +30,18 @@ module.exports = function (grunt) {
 
         });
 
+        console.log('Building Image List:');
         var sassContent = '$imagelist: (\r\n';
         for( var i =0; i < index; ++i) {
             var filename = '../img/' + files[i].relPath;
             sassContent += '  (' + (+i+1) +', "' + filename + '"),\r\n';
+            console.log(' ---- => ' + filename);
         }
         sassContent += ')\r\n';
 
         grunt.file.write(sassfilename, sassContent);
+        console.log(sassfilename);
+        console.log(sassContent);
 
         return files;
     }
