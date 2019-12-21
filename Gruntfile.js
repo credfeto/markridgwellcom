@@ -278,8 +278,7 @@ module.exports = function (grunt) {
         'cssmin',
         'copy',
         'filerev',
-        'pug',
-        'htmlmin'
+        'pug'
     ]);
 
     grunt.registerTask('rebuild', [
