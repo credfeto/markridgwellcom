@@ -49,9 +49,13 @@ module.exports = function (grunt) {
     function getNamedFile(srcdir, wildcard, prefix) {
         var fileName = null;
 
+        console.log('Getting named file: ' + srcdir + '::::' + wildcard + ':::::' + prefix);
+
         grunt.file.expand({cwd: srcdir}, wildcard).forEach(function(relpath) {
 
+
             fileName = prefix + '/' + relpath;
+            console.log('Found: ' + fileName);
             return fileName;
 
         });
@@ -63,6 +67,7 @@ module.exports = function (grunt) {
     function getInlineNamedFile(srcdir, wildcard, relativePath) {
         var fileName = getNamedFile(srcdir, wildcard, srcdir);
         if (fileName === null) {
+            console.log('No file found');
             return null;
         }
 
@@ -76,6 +81,10 @@ module.exports = function (grunt) {
                 console.log('Using inline content from ' + fileName + ' as it is less than ' + maxInlineCssLength + ' bytes');
                 return content;
             }
+        }
+        else
+        {
+            console.log('File does not exist:' + fileName);
         }
 
         return null;
