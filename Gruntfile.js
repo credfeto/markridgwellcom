@@ -118,7 +118,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/sass',
-                    src: ['**/*.scss', '!*.generated.scss'],
+                    src: ['**/*.scss', '*.generated.scss'],
                     dest: 'tmp/css/postsass',
                     ext: '.css'
                 }]
