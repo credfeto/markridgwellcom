@@ -22,9 +22,9 @@ jobs:
       env:
         CI: true
     - name: npm build
-        run: npm run build
-        env:
-          CI: true
+      run: npm run build
+      env:
+        CI: true
     - uses: actions-hub/gcloud@master
       name: Deploy
       env:
