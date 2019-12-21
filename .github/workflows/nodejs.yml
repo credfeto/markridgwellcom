@@ -9,8 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: actions-hub/gcloud@master
+    - uses: actions/setup-node@v1
       with:
         node-version: 12.x
     - name: npm install
@@ -25,11 +25,10 @@ jobs:
             echo '***************************************************************************************************'
             pwd
             echo '***************************************************************************************************'
-            ls -lRd .
+            ls -lRd dst
       env:
         CI: false
-    - uses: actions-hub/gcloud@master
-      name: Deploy
+    - name: Deploy
       env:
         PROJECT_ID: ${{secrets.GCLOUD_PROJECT_ID}}
         APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
