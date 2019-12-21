@@ -1,13 +1,15 @@
-runtime: python37
-api_version: 1
-threadsafe: true
+runtime: python3
+#api_version: 1
+#threadsafe: true
+
+instance_class: F1
 
 default_expiration: "30d"
 
 handlers:
 - url: /(.*\.(ico|gif|png|jpg|css))$
   static_files: static/\1
-  upload: static/(.*)
+  upload: static/.*\.(ico|gif|png|jpg|css)$
   secure: always
   redirect_http_response_code: 301
   expiration: "600d"
