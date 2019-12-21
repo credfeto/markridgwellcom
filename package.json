@@ -1,28 +1,31 @@
 {
-  "name": "MarkRidgwell.Com",
-  "version": "0.0.1",
-  "description": "Mark Ridgwell.com",
-  "license": "MarkR",
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
   "scripts": {
-	 "rebuild": "grunt rebuild",
-     "build": "grunt build"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js --progress --profile --debug"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "latest",
-    "grunt": "latest",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "latest",
-    "grunt-contrib-htmlmin": "^2.4.0",
-    "grunt-contrib-pug": "^1.0.0",
-    "grunt-sass": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-contrib-watch": "latest",
-    "grunt-data-uri": "^0.3.0",
-    "grunt-filerev": "^2.3.1",
-    "grunt-postcss": "latest"
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.0",
+    "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.0",
+    "robotstxt-webpack-plugin": "^7.0.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.1.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "lodash": "^4.17.15"
   }
 }

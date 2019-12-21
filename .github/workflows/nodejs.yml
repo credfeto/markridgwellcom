@@ -17,13 +17,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build
-      run: |
-        npm install
-        npm run build
-        npm run build
+    - name: npm install
+      run: npm install
       env:
         CI: true
+    - name: npm build
+      run: npm run build
+      env:
+        CI: true
+    - name: list files
+      run: |
+             pwd
+             ls -ldR .
     - uses: actions-hub/gcloud@master
       name: Deploy
       env:
