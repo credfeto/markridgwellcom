@@ -20,7 +20,6 @@ jobs:
     - name: npm install, build
       run: |
         npm install
-        npm run rebuild
         npm run build
       env:
         CI: true
