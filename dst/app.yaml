@@ -52,7 +52,7 @@ handlers:
     Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 - url: /(.*\.(ico|gif|png|jpg))$
-    static_dir: static/\1
+    static_dir: static/
     upload: static/.*\.(ico|gif|png|jpg)$
     secure: always
     redirect_http_response_code: 301
@@ -68,7 +68,7 @@ handlers:
       Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 - url: /(.*\.(css))$
-  static_dir: static/\1
+  static_dir: static/
   upload: static/.*\.(css)$
   secure: always
   redirect_http_response_code: 301
