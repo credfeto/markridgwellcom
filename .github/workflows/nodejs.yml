@@ -25,6 +25,8 @@ jobs:
       run: npm run build
       env:
         CI: true
+    - name: list files
+      run: ls -ldR dst
     - uses: actions-hub/gcloud@master
       name: Deploy
       env:
