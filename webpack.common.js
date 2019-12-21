@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
-const SizeLimiterPlugin = require('webpack-size-limiter-plugin');
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
