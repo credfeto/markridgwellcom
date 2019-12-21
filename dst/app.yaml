@@ -5,7 +5,7 @@ threadsafe: true
 default_expiration: "30d"
 
 handlers:
-- url: /(.*\.(ico|gif|png|jpg))$
+- url: /(.*\.(ico|gif|png|jpg|css))$
   static_files: static/\1
   upload: static/(.*)
   secure: always
