@@ -30,4 +30,6 @@ jobs:
       env:
         CI: false
     - name: Deploy
-      run: gcloud app deploy dst/app.yaml --project ${{secrets.GCLOUD_PROJECT_ID}}
+      run: |
+             ls -lR dst
+             gcloud app deploy dst/app.yaml --project ${{secrets.GCLOUD_PROJECT_ID}}
