@@ -61,10 +61,18 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif|ico)$/,
+                test: /\.(ico)$/,
                 use: [
                     'file-loader',
                 ],
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/,
+                loader: 'url-loader',
+                options: {
+                    // Images larger than 10 KB won’t be inlined
+                    limit: 20 * 1024
+                }
             },
         ],
     },
