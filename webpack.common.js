@@ -14,7 +14,6 @@ module.exports = {
     plugins: [
         new ManifestPlugin(),
         new RobotstxtPlugin(),
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             favicon: 'src/img/favicon.ico',
             template: "src/index.html",
