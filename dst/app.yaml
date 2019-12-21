@@ -7,7 +7,7 @@ default_expiration: "30d"
 handlers:
 - url: /
   static_files: static/
-  upload: static/index.html
+  upload: static/
   secure: always
   redirect_http_response_code: 301
   http_headers:
