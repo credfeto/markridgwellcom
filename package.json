@@ -4,7 +4,8 @@
   "description": "Mark Ridgwell.com",
   "license": "MarkR",
   "scripts": {
-	 "build": "grunt rebuild"
+	 "rebuild": "grunt rebuild",
+     "build": "grunt build"
   },
   "devDependencies": {
     "autoprefixer": "latest",

@@ -261,8 +261,7 @@ module.exports = function (grunt) {
     // Register Grunt tasks
     grunt.registerTask('default', ['watch']);
 
-    grunt.registerTask('rebuild', [
-        'clean',
+    grunt.registerTask('build', [
         'sass',
         'postcss',
         'sass',
@@ -281,5 +280,10 @@ module.exports = function (grunt) {
         'filerev',
         'pug',
         'htmlmin'
+    ]);
+
+    grunt.registerTask('rebuild', [
+        'clean',
+        'build'
     ]);
 };
