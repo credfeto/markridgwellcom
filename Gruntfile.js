@@ -105,6 +105,7 @@ module.exports = function (grunt) {
                 'tmp/css/auto/*',
                 'tmp/css/min/*',
                 'tmp/css/postsass/*',
+                'tmp/css/datauri/*',
                 '.sass-cache/**'
             ]
         },
@@ -118,7 +119,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/sass',
-                    src: ['**/*.scss', '**/*.generated.scss'],
+                    src: ['**/*.scss'],
                     dest: 'tmp/css/postsass',
                     ext: '.css'
                 }]
@@ -194,11 +195,11 @@ module.exports = function (grunt) {
             compile: {
                 options: {
                     data: {
-                        debug: false,
+                        debug: true,
+                        images: getBandImageFiles( 'dst/static/img', '**/*.jpg', 'src/sass/imagefiles.generated.scss'),
                         favicon: getNamedFile('dst/static/img', '*favicon.*.ico', 'img'),
                         css: getNamedFile('dst/static/css', '*site.*.css', 'css'),
-                        inlinecss: getInlineNamedFile('dst/static/css', '*site.*.css', ''),
-                        images: getBandImageFiles( 'dst/static/img', '**/*.jpg', 'src/sass/imagefiles.generated.scss')
+                        inlinecss: getInlineNamedFile('dst/static/css', '*site.*.css', '')
                     }
                 },
                 files: {
