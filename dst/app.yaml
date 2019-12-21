@@ -52,7 +52,7 @@ handlers:
     Feature-Policy: sync-xhr 'none'; document-domain 'none'; geolocation 'none'
 
 - url: /(.+)
-  static_dir: static/\1
+  static_files: static/\1
   upload: static/(.*)
   secure: always
   redirect_http_response_code: 301
