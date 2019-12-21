@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const RobotstxtPlugin = require("robotstxt-webpack-plugin");
+const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -28,6 +29,18 @@ module.exports = {
             template: "src/index.html",
             compile: true,
             inject: false
+        }),
+        new ImageminWebpWebpackPlugin({
+            config: [{
+                test: /\.(jpe?g|png)/,
+                options: {
+                    quality:  75
+                }
+            }],
+            overrideExtension: true,
+            detailedLogs: false,
+            silent: false,
+            strict: true
         })
     ],
     module: {
