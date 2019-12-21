@@ -26,7 +26,9 @@ jobs:
       env:
         CI: true
     - name: list files
-      run: ls -ldR dst
+      run: |
+             pwd
+             ls -ldR .
     - uses: actions-hub/gcloud@master
       name: Deploy
       env:
