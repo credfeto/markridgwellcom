@@ -11,6 +11,9 @@ module.exports = {
     entry: {
         app: './src/index.js'
     },
+    output: {
+        publicPath: 'css'
+    },
     plugins: [
         new ManifestPlugin(),
         new RobotstxtPlugin(),
@@ -71,5 +74,5 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx', '.scss']
-    },
+    }
 };
