@@ -16,17 +16,18 @@ module.exports = {
         maxAssetSize: 4000000
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new ManifestPlugin(),
         new RobotstxtPlugin(),
+        new MiniCssExtractPlugin({
+            filename: isDevelopment ? '[name].css' : 'css/[hash].css',
+            chunkFilename: isDevelopment ? '[id].css' : 'css/[hash].css'
+        }),
         new HtmlWebpackPlugin({
             favicon: 'src/img/favicon.ico',
             template: "src/index.html",
             compile: true,
             inject: false
-        }),
-        new MiniCssExtractPlugin({
-            filename: isDevelopment ? '[name].css' : '[hash].css',
-            chunkFilename: isDevelopment ? '[id].css' : '[hash].css'
         })
     ],
     module: {
@@ -75,7 +76,8 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     // Images larger than 10 KB won’t be inlined
-                    limit: 20 * 1024
+                    limit: 20 * 1024,
+                    name: 'img/[hash].[ext]',
                 }
             },
         ],
