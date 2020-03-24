@@ -22,4 +22,5 @@ jobs:
       - name: auto-merge
         uses: ridedott/dependabot-auto-merge-action@master
         with:
+          GITHUB_LOGIN: dependabot
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
