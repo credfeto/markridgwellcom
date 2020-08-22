@@ -1,6 +1,7 @@
 runtime: python38
 #api_version: 1
 #threadsafe: true
+version: v1
 
 instance_class: F1
 
