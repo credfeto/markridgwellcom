@@ -35,4 +35,4 @@ jobs:
     - name: Deploy
       run: |
              ls -lR dst
-             gcloud app deploy dst/app.yaml --project ${{secrets.GCLOUD_PROJECT_ID}} --version latest
+             gcloud app deploy dst/app.yaml --project ${{secrets.GCLOUD_PROJECT_ID}} --version v2020
