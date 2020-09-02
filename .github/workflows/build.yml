@@ -6,18 +6,16 @@ on:
     - master
 
 jobs:
-  build:
+  build_only:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: npm install
-      run: npm install
+    - run: npm install
       env:
         CI: false
-    - name: npm build
-      run: |
+    - run: |
             npm run build
             echo '***************************************************************************************************'
             echo '***************************************************************************************************'
@@ -25,4 +23,3 @@ jobs:
             ls -lR dst
       env:
         CI: false
-    - name: Deploy
