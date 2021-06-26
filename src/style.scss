@@ -161,7 +161,7 @@ ul.cb-slideshow {
     }
   }
 
-  /* Set up div's for image rotation */
+  /* Set up div for image rotation */
   @each $i, $filename in $imagelist {
     li:nth-child(#{$i}) {
       span {
