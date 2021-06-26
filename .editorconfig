@@ -69,9 +69,6 @@ indent_style=space
 indent_size=4
 end_of_line=crlf
 
-[*.scss]
-indent_size = 2
-
 # Microsoft .NET properties
 csharp_preferred_modifier_order=public, private, protected, internal, new, abstract, virtual, sealed, override, static, readonly, extern, unsafe, volatile, async:suggestion
 csharp_prefer_braces=true:warning
