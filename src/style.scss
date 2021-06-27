@@ -80,7 +80,7 @@ ul.contact {
       width: 128px;
       height: 128px;
     }
-    color:#000002;
+    color: #000002;
   }
 
   li.facebook {
@@ -103,7 +103,7 @@ ul.contact {
 }
 
 ul.cb-slideshow,
-ul.cb-slideshow:after {
+ul.cb-slideshow::after {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -112,7 +112,7 @@ ul.cb-slideshow:after {
   z-index: 0;
 }
 
-ul.cb-slideshow:after {
+ul.cb-slideshow::after {
   content: '';
   background: transparent url('./img/pattern.png') repeat top left;
 }
