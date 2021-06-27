@@ -17,27 +17,25 @@ $imagelist: (
 $slideshowImageDuration: 6;
 $images: length($imagelist);
 
-body
-{
+body {
   background-color: $background-color;
   font-family: $font;
 }
 
-header
-{
+header {
   animation: none;
 }
 
-.container{
+.container {
   position: relative;
   text-align: center;
 }
 
-.clr{
+.clr {
   clear: both;
 }
 
-.container > header{
+.container > header {
   margin: 0 20px 10px;
   position: relative;
   display: block;
@@ -45,7 +43,7 @@ header
   text-align: left;
 }
 
-.container > header h1{
+.container > header h1 {
   font-size: 35px;
   line-height: 35px;
   position: relative;
@@ -54,7 +52,7 @@ header
   text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   margin-bottom: 0;
 }
-.container > header h2, p{
+.container > header h2, p {
   font-size: 16px;
   font-style: italic;
   color: #f8f8f8;
@@ -84,8 +82,7 @@ ul.contact {
     color:#000002;
   }
 
-  li.facebook
-  {
+  li.facebook   {
     a {
       background-position: 0 0;
     }
@@ -186,16 +183,20 @@ ul.cb-slideshow {
     opacity: 0;
     animation-timing-function: ease-in;
   }
+
   8% {
     opacity: 1;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-out
   }
+
   17% {
     opacity: 1
   }
+
   25% {
     opacity: 0
   }
+
   100% {
     opacity: 0
   }
@@ -207,21 +208,25 @@ ul.cb-slideshow {
   0% {
     opacity: 0
   }
+
   8% {
     opacity: 1
   }
+
   17% {
     opacity: 1
   }
+
   19% {
     opacity: 0
   }
+
   100% {
     opacity: 0
   }
 }
 
 /* Show at least something when animations not supported */
-.no-cssanimations .cb-slideshow li span{
-  opacity: 1;
+.no-cssanimations .cb-slideshow li span {
+  opacity: 1
 }
