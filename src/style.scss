@@ -1,7 +1,7 @@
 $background-color: #000;
 $font: 'Verdana', 'Arial', 'Sans-serif';
 
-$imagelist: (
+$image_list: (
   (1, "./img/01 King Leviathan at The Dev, Camden.jpg"),
   (2, "./img/02 Satan's Empire at The Dev, Camden.jpg"),
   (3, "./img/03 The Naked Apes at The Shark, Harlow.jpg"),
@@ -15,7 +15,7 @@ $imagelist: (
 );
 
 $slideshowImageDuration: 6;
-$images: length($imagelist);
+$images: length($image_list);
 
 body {
   background-color: $background-color;
@@ -159,7 +159,7 @@ ul.cb-slideshow {
   }
 
   /* Set up div for image rotation */
-  @each $i, $filename in $imagelist {
+  @each $i, $filename in $image_list {
     li:nth-child(#{$i}) {
       span {
         background-image: url("#{$filename}");
