@@ -186,19 +186,19 @@ ul.cb-slideshow {
 
   8% {
     opacity: 1;
-    animation-timing-function: ease-out
+    animation-timing-function: ease-out;
   }
 
   17% {
-    opacity: 1
+    opacity: 1;
   }
 
   25% {
-    opacity: 0
+    opacity: 0;
   }
 
   100% {
-    opacity: 0
+    opacity: 0;
   }
 }
 
@@ -206,27 +206,27 @@ ul.cb-slideshow {
 /* Animation for the title */
 @keyframes titleAnimation {
   0% {
-    opacity: 0
+    opacity: 0;
   }
 
   8% {
-    opacity: 1
+    opacity: 1;
   }
 
   17% {
-    opacity: 1
+    opacity: 1;
   }
 
   19% {
-    opacity: 0
+    opacity: 0;
   }
 
   100% {
-    opacity: 0
+    opacity: 0;
   }
 }
 
 /* Show at least something when animations not supported */
 .no-cssanimations .cb-slideshow li span {
-  opacity: 1
+  opacity: 1;
 }
