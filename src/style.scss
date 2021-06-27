@@ -161,6 +161,7 @@ ul.cb-slideshow {
     li:nth-child(#{$i}) {
       span {
         background-image: url("#{$filename}");
+
         @if ($i > 0) {
           animation-delay: #{$slideshowImageDuration * ($i - 1) }s;
         }
