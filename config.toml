@@ -6,16 +6,16 @@ disableKinds = ["section", "taxonomy", "term"]
     # Set to enable Plausible Analytics.
     plausible_domain = ""
 
-    [params.gallerydeluxe]
-        # Shuffle the images in the gallery to give the impression of a new gallery each page load.
-        shuffle = false
+[params.gallerydeluxe]
+    # Shuffle the images in the gallery to give the impression of a new gallery each page load.
+    shuffle = false
 
-        # Reverse the order of the images in the gallery.
-        reverse = true
+    # Reverse the order of the images in the gallery.
+    reverse = true
 
-        # Enable Exif data in the gallery.
-        # See https://gohugo.io/content-management/image-processing/#exif-data for how to filter tags.
-        enable_exif = false
+    # Enable Exif data in the gallery.
+    # See https://gohugo.io/content-management/image-processing/#exif-data for how to filter tags.
+    enable_exif = false
 
 [caches]
     [caches.images]
