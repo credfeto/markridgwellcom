@@ -34,6 +34,14 @@
 *.cs    text=auto diff=csharp
 
 ###############################################################################
+# Preserve existing line endings for markdown files that were originally CRLF
+###############################################################################
+
+# CHANGELOG.md was committed with CRLF line endings; treat as binary to
+# preserve CRLF so that diffs remain content-only (not mixed with CRLF→LF noise)
+CHANGELOG.md -text
+
+###############################################################################
 # Explicitly binary - should be handled automatically anyway
 ###############################################################################
 *.jpg   binary
