@@ -14,6 +14,7 @@ Please ADD ALL Changes to the UNRELASED SECTION and not a specific release
 ### Fixed
 ### Changed
 - [Dependencies] Bump actions/checkout from 6.0.2 to 6.0.3
+- [Dependencies] Bump trufflesecurity/trufflehog from 3.100.0 to 3.100.1
 ### Deprecated
 ### Removed
 ### Deployment Changes
